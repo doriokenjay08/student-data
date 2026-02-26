@@ -1,0 +1,39 @@
+public class MainJava {
+
+    public static void main(String[] args) {
+
+        Repository repo = new Repository();
+
+        Student student = new Student.StudentBuilder()
+                .setStudentId(1)
+                .setFirstName("Juan")
+                .setLastName("Dela Cruz")
+                .setAge(20)
+                .setCourse("BSIT")
+                .setContactNo(912345678)
+                .setEmail("juan@email.com")
+                .setYearLevel(1)
+                .setFavoriteColor("Blue")
+                .setAddress("Valenzuela City")
+                .build();
+
+        repo.insertStudent(student);
+
+        for (Student s : repo.getAllStudents()) {
+            System.out.println(
+                    s.getStudentId() + " | " +
+                    s.getFirstName() + " " +
+                    s.getLastName() + " | " +
+                    s.getAge() + " | " +
+                    s.getCourse() + " | " +
+                    s.getContactNo() + " | " +
+                    s.getEmail() + " | " +
+                    s.getYearLevel() + " | " +
+                    s.getFavoriteColor() + " | " +
+                    s.getAddress()
+            );
+        }
+    }
+
+    
+}
